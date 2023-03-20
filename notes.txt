@@ -1,0 +1,13 @@
+- Projects and Stacks
+- Stacks = different instances of infrastucture
+- Stack export and import to migrate between backends
+- State is stored in checkpoints (transactional snapshot) - records often and early - easy to recover from failure
+- Default Naming uses random ids as postfix for names (so multiple stacks can be created in same env)
+- Local backed uses flat structure - so stacks
+- With Pulumi backend, the AWS calls are still made from the client unlike TFE model
+- Get static functions = datasource
+- Provider functions are general utility functions
+ - apigateway.LookupDomainName
+- Outputs are promises - special operations to use outputs for concatenation etc. (pulumi.Sprintf, pulumi.concat, etc)
+
+- Encryption provider

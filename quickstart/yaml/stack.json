@@ -1,0 +1,164 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2023-03-13T11:57:40.8499158-05:00",
+            "magic": "f8c0e91cc93d16d57721e104a235d98b0e9d90478344850b1e480a3661487599",
+            "version": "v3.57.1"
+        },
+        "secrets_providers": {
+            "type": "passphrase",
+            "state": {
+                "salt": "v1:F1mFc2go1Z8=:v1:Jxmv/e0RhEYqYRte:rvvNtTX7zD/iYVaabUbhCfC2/0dajA=="
+            }
+        },
+        "resources": [
+            {
+                "urn": "urn:pulumi:prod::hello-aws-yaml::pulumi:pulumi:Stack::hello-aws-yaml-prod",
+                "custom": false,
+                "type": "pulumi:pulumi:Stack",
+                "outputs": {
+                    "bucketEndpoint": "http://my-bucket-646da0d.s3-website.us-east-2.amazonaws.com",
+                    "bucketName": "my-bucket-646da0d"
+                }
+            },
+            {
+                "urn": "urn:pulumi:prod::hello-aws-yaml::pulumi:providers:aws::default",
+                "custom": true,
+                "id": "4692835d-4b14-43d5-85e0-057f6bfb5387",
+                "type": "pulumi:providers:aws"
+            },
+            {
+                "urn": "urn:pulumi:prod::hello-aws-yaml::aws:s3/bucket:Bucket::my-bucket",
+                "custom": true,
+                "id": "my-bucket-646da0d",
+                "type": "aws:s3/bucket:Bucket",
+                "inputs": {
+                    "__defaults": [
+                        "acl",
+                        "bucket",
+                        "forceDestroy"
+                    ],
+                    "acl": "private",
+                    "bucket": "my-bucket-646da0d",
+                    "forceDestroy": false,
+                    "website": {
+                        "__defaults": [],
+                        "indexDocument": "index.html"
+                    }
+                },
+                "outputs": {
+                    "accelerationStatus": "",
+                    "acl": "private",
+                    "arn": "arn:aws:s3:::my-bucket-646da0d",
+                    "bucket": "my-bucket-646da0d",
+                    "bucketDomainName": "my-bucket-646da0d.s3.amazonaws.com",
+                    "bucketRegionalDomainName": "my-bucket-646da0d.s3.us-east-2.amazonaws.com",
+                    "corsRules": [],
+                    "forceDestroy": false,
+                    "grants": [],
+                    "hostedZoneId": "Z2O1EMRO9K5GLX",
+                    "id": "my-bucket-646da0d",
+                    "lifecycleRules": [],
+                    "loggings": [],
+                    "objectLockConfiguration": null,
+                    "region": "us-east-2",
+                    "replicationConfiguration": null,
+                    "requestPayer": "BucketOwner",
+                    "serverSideEncryptionConfiguration": {
+                        "rule": {
+                            "applyServerSideEncryptionByDefault": {
+                                "kmsMasterKeyId": "",
+                                "sseAlgorithm": "AES256"
+                            },
+                            "bucketKeyEnabled": false
+                        }
+                    },
+                    "tags": {},
+                    "tagsAll": {},
+                    "versioning": {
+                        "enabled": false,
+                        "mfaDelete": false
+                    },
+                    "website": {
+                        "errorDocument": "",
+                        "indexDocument": "index.html",
+                        "redirectAllRequestsTo": "",
+                        "routingRules": ""
+                    },
+                    "websiteDomain": "s3-website.us-east-2.amazonaws.com",
+                    "websiteEndpoint": "my-bucket-646da0d.s3-website.us-east-2.amazonaws.com"
+                },
+                "parent": "urn:pulumi:prod::hello-aws-yaml::pulumi:pulumi:Stack::hello-aws-yaml-prod",
+                "provider": "urn:pulumi:prod::hello-aws-yaml::pulumi:providers:aws::default::4692835d-4b14-43d5-85e0-057f6bfb5387",
+                "propertyDependencies": {
+                    "website": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:prod::hello-aws-yaml::aws:s3/bucketObject:BucketObject::index.html",
+                "custom": true,
+                "id": "index.html",
+                "type": "aws:s3/bucketObject:BucketObject",
+                "inputs": {
+                    "__defaults": [
+                        "forceDestroy",
+                        "key"
+                    ],
+                    "acl": "public-read",
+                    "bucket": "my-bucket-646da0d",
+                    "contentType": "text/html",
+                    "forceDestroy": false,
+                    "key": "index.html",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "a3c86e253d13761b540b565c75f153ccfd661b1002ce7834106e86f726642c08",
+                        "path": "C:\\Users\\rajesh\\projects\\iaac\\pulumi\\quickstart\\yaml\\index.html"
+                    }
+                },
+                "outputs": {
+                    "acl": "public-read",
+                    "bucket": "my-bucket-646da0d",
+                    "bucketKeyEnabled": false,
+                    "cacheControl": "",
+                    "contentDisposition": "",
+                    "contentEncoding": "",
+                    "contentLanguage": "",
+                    "contentType": "text/html",
+                    "etag": "7a344dea53136a476ab4008ac1fb490b",
+                    "forceDestroy": false,
+                    "id": "index.html",
+                    "key": "index.html",
+                    "metadata": {},
+                    "objectLockLegalHoldStatus": "",
+                    "objectLockMode": "",
+                    "objectLockRetainUntilDate": "",
+                    "serverSideEncryption": "AES256",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "a3c86e253d13761b540b565c75f153ccfd661b1002ce7834106e86f726642c08",
+                        "path": "C:\\Users\\rajesh\\projects\\iaac\\pulumi\\quickstart\\yaml\\index.html"
+                    },
+                    "storageClass": "STANDARD",
+                    "tags": {},
+                    "tagsAll": {},
+                    "versionId": "",
+                    "websiteRedirect": ""
+                },
+                "parent": "urn:pulumi:prod::hello-aws-yaml::pulumi:pulumi:Stack::hello-aws-yaml-prod",
+                "dependencies": [
+                    "urn:pulumi:prod::hello-aws-yaml::aws:s3/bucket:Bucket::my-bucket"
+                ],
+                "provider": "urn:pulumi:prod::hello-aws-yaml::pulumi:providers:aws::default::4692835d-4b14-43d5-85e0-057f6bfb5387",
+                "propertyDependencies": {
+                    "acl": null,
+                    "bucket": [
+                        "urn:pulumi:prod::hello-aws-yaml::aws:s3/bucket:Bucket::my-bucket"
+                    ],
+                    "contentType": null,
+                    "source": null
+                }
+            }
+        ]
+    }
+}

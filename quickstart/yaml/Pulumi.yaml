@@ -1,0 +1,20 @@
+name: hello-aws-yaml
+runtime: yaml
+description: A minimal AWS Pulumi YAML program
+outputs:
+  bucketName: ${my-bucket.id}
+  bucketEndpoint: http://${my-bucket.websiteEndpoint}
+resources:
+  my-bucket:
+    type: aws:s3:Bucket
+    properties:
+      website:
+        indexDocument: index.html
+  index.html:
+    type: aws:s3:BucketObject
+    properties:
+      bucket: ${my-bucket}
+      source:
+        Fn::FileAsset: ./index.html
+      acl: public-read
+      contentType: text/html
