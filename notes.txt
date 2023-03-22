@@ -9,5 +9,12 @@
 - Provider functions are general utility functions
  - apigateway.LookupDomainName
 - Outputs are promises - special operations to use outputs for concatenation etc. (pulumi.Sprintf, pulumi.concat, etc)
+- Languages are run first class to generate resource graph (as opposed to terreform cdk/aws cdk transpiling language to json/yaml)
+- Resource Aliasing aid with refactoring/renaming resources
+- Transformations to apply custom overrides on top of component (module)
+- Terraform Variables = Pulumi config. (pulumi config set)
+- Encryption provider*
+- Crosscode (pulumi convert) to convert between languages
+- Crosswalk (awsx) - abstraction on top of aws resources (ec2, ecs, lb)
+- Pulumi AWS CDK Adapter - use AWS CDK constructs in a pulumi program (creates pulumi resources without cloudformation)
 
-- Encryption provider
